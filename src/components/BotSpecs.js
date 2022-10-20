@@ -9,9 +9,13 @@ const botTypeClasses = {
   Captain: "icon star",
 };
 
-function BotSpecs({ bot }) {
+function BotSpecs({ bot, onRemoveClick }) {
+  function handleClickRemove() {
+    onRemoveClick(bot)
+  }
+
   return (
-    <div className="ui segment">
+    <div className="ui segment" onClick={handleClickRemove} >
       <div className="ui two column centered grid">
         <div className="row">
           <div className="four wide column">
